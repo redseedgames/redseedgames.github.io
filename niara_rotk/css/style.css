@@ -1,0 +1,47 @@
+@font-face {
+  font-family: binary;
+  src: url(binxchr.ttf);
+}
+.footer {
+    background-color: white;
+    color: red;
+}
+.navbar {
+	background-color: white;
+	color:red;
+}
+nav {
+	background-color: white;
+	color:red;
+}
+a {
+	color:red;
+}
+.container-fluid>.row>.col-sm-12>.row>.col-sm-8>p,h3,h4 {
+	color:white;
+}
+.container-fluid>.row>.col-sm-12>.row>.col-sm-8>h5 {
+	color:white;
+	font-weight:bold;
+}
+.container-fluid>.row>.col-sm-12>.row>.col-sm-8>h1,h2 {
+	color:white;
+	font-weight:bold;
+}
+nav {
+	border-bottom: 1px solid rgba(255,255,255);
+}
+#footer {
+	border-top: 1px solid white;
+	background-color:rgba(0,0,0,0.8);
+}
+#footer>p {
+	color:white;
+}
+body {
+	background-image: url("images/background.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

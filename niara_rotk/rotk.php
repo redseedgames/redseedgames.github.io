@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Niara: Rebellion Of the King</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script>
+  $(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+</head>
+<body style = "background-image:url('images/niara_kneeling_fire.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
+<nav class="navbar navbar-expand-md fixed-top" style = "background-color:rgba(0,0,0,0.8);">
+  <a href = "index.php"><img src = "images/niara_logo.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style = "color:white;">
+    <img src = "images/toggler_icon.png">
+	<!--<span class="navbar-toggler-icon"></span>-->
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar" style="margin-left:20px;">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#home" data-toggle="collapse" data-target=".navbar-collapse.show" style="color:white;">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href = "#about" data-toggle="collapse" data-target=".navbar-collapse.show" style = "color:white;">About</a>
+      </li>
+     <li class="nav-item">
+        <a class="nav-link" href="#screenshots" data-toggle="collapse" data-target=".navbar-collapse.show" style = "color:white;">Screenshots</a>
+     </li>  
+     <li class="nav-item">
+        <a class="nav-link" href="#contactus" data-toggle="collapse" data-target=".navbar-collapse.show" style = "color:white;">Contact Us</a>
+     </li>  
+     <li class="nav-item">
+        <a class="nav-link" href="#faqs" data-toggle="collapse" data-target=".navbar-collapse.show" style = "color:white;">FAQs</a>
+     </li>	
+	<li class="nav-item" style = "float:right;">
+        <a class="nav-link" href="https://spark.adobe.com/page/6b6RXxOKUIlIC/" style = "color:white;">Press kit</a>
+     </li>
+	 <li class="nav-item" style = "float:right;">
+        <a class="nav-link" href="https://ayushraj.cc" style = "color:white;">Blog</a>
+     </li>
+    </ul>
+  </div>  
+</nav>
+<br>
+<div class="container-fluid" style="padding-top:10px;margin-top:30px;background-color:rgba(0,0,0,0.8);">
+  <div class="row">
+    <div class="col-sm-12">
+	<center>
+	<img src = "images/discord.png" class = "img-fluid" width = "48" height = "auto"/>
+	<a href="https://discord.gg/qUYyMuM" style="color:white;">Join our discord server</a>
+	</center>
+	</div>
+  </div>
+</div>
+<div class="container-fluid" style="margin-top:30px;">
+  <div class="row">
+    <div class="col-sm-12">
+	  <div class = "row">
+	  <div class="col-sm-6">
+	  <p id = "home"></p><br>
+	  <img src = "images/niara_sign_hd.png" class="img-fluid"><br>
+	  <img src = "images/rebellion_of_the_king_text_hd.png" class = "img-fluid"><br><br>
+	  <h2 style = "text-shadow: 0 0 5px #FFFFFF;font-family:binary;">VISUAL NOVEL ROLE PLAYING GAME ON ANDROID</h2>
+	  <h2 style = "text-shadow: 0 0 5px #FFFFFF;font-family:binary;">GET IT HERE:</h2><div class = "d-inline"><a href = "https://store.steampowered.com/app/1082730/Niara_Rebellion_Of_the_King_Visual_Novel_RPG/?beta=0"><img src = "images/steam.jpg" style = "width:250px;height:auto;"/></a>
+	  </div>
+	  </div>
+	  <div class = "col-sm-6"><br><br><br><br><br>
+		<div class="embed-responsive embed-responsive-16by9">
+			<iframe width="560" height="315" src="https://youtube.com/embed/NoWRv_O8sYA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+		</div>
+	  </div>
+	  </div>
+	  <p id = "about"></p><br><br>
+	  <h1 style="text-shadow: 0 0 10px orange;font-family:binary;color:orange;font-size:60px;">ABOUT</h1>
+	  <br><br>
+	  <div class = "row">
+	  <div class = "col-sm-6">
+	  <img src = "images/niara_sword.png" class = "img-fluid">
+	  </div>
+	  <div class = "col-sm-6">
+	  <h2 style = "text-shadow: 0 0 5px #FFFFFF;font-family:binary;">NIARA: REBELLION OF THE KING IS A
+VISUAL NOVEL RPG IN WHICH YOU TRAVEL
+ACROSS THE TROUBLED LAND OF KRUUTHVAAL
+AND RESTORE PEACE TO ITS MANY CITIES
+AND STATES WHICH HAVE SUCCUMBED TO WAR
+AND CONFLICT.</h2>
+	  </div>
+	  </div>
+	  <div class = "row">
+	  <div class = "col-sm-8">
+	 <h1 style="text-shadow: 0 0 10px orange;font-family:binary;color:orange;font-size:60px;">SCREENS</h1>
+	 <div id="screenshots" class="carousel slide" data-ride="carousel">
+	 <br><br><br>
+  <ol class="carousel-indicators">
+    <li data-target="#screenshots" data-slide-to="0" class="active"></li>
+    <li data-target="#screenshots" data-slide-to="1"></li>
+    <li data-target="#screenshots" data-slide-to="2"></li>
+	<li data-target="#screenshots" data-slide-to="3"></li>
+	<li data-target="#screenshots" data-slide-to="4"></li>
+	<li data-target="#screenshots" data-slide-to="5"></li>
+	<li data-target="#screenshots" data-slide-to="6"></li>
+	<li data-target="#screenshots" data-slide-to="7"></li>
+	<li data-target="#screenshots" data-slide-to="8"></li>
+    <li data-target="#screenshots" data-slide-to="9"></li>
+	<li data-target="#screenshots" data-slide-to="10"></li>
+	<li data-target="#screenshots" data-slide-to="11"></li>
+	<li data-target="#screenshots" data-slide-to="12"></li>
+	<li data-target="#screenshots" data-slide-to="13"></li>
+	<li data-target="#screenshots" data-slide-to="14"></li>
+	<li data-target="#screenshots" data-slide-to="15"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <img class="d-block img-fluid" src="images/sc_1.jpg">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block img-fluid" src="images/sc_2.jpg">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block img-fluid" src="images/sc_3.jpg">
+    </div>
+	<div class="carousel-item">
+      <img class="d-block img-fluid" src="images/sc_4.jpg">
+    </div>
+	<div class="carousel-item">
+      <img class="d-block img-fluid" src="images/sc_5.jpg">
+    </div>
+	<div class="carousel-item">
+      <img class="d-block img-fluid" src="images/sc_6.jpg">
+    </div>
+	<div class="carousel-item">
+      <img class="d-block img-fluid" src="images/sc_7.jpg">
+    </div>
+	<div class="carousel-item">
+      <img class="d-block img-fluid" src="images/sc_8.jpg">
+    </div>
+  
+  <div class="carousel-item">
+      <img class="d-block img-fluid" src="images/sc_9.jpg">
+    </div>
+	<div class="carousel-item">
+      <img class="d-block img-fluid" src="images/sc_10.jpg">
+    </div>
+	<div class="carousel-item">
+      <img class="d-block img-fluid" src="images/sc_11.jpg">
+    </div>
+	<div class="carousel-item">
+      <img class="d-block img-fluid" src="images/sc_12.jpg">
+    </div>
+	<div class="carousel-item">
+      <img class="d-block img-fluid" src="images/sc_13.jpg">
+    </div>
+	<div class="carousel-item">
+      <img class="d-block img-fluid" src="images/sc_14.jpg">
+    </div>
+	<div class="carousel-item">
+      <img class="d-block img-fluid" src="images/sc_15.jpg">
+    </div>
+	<div class="carousel-item">
+      <img class="d-block img-fluid" src="images/sc_16.jpg">
+    </div>
+	</div>
+  <a class="carousel-control-prev" href="#screenshots" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#screenshots" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+<div class = "col-sm-4">
+<br><br><br><br><br><br>
+<h2 style = "text-shadow: 0 0 5px #FFFFFF;font-family:binary;">
+EXPLORE THE GAME WORLD USING CHOICES IN VISUAL NOVEL STYLE.<br>
+BATTLE ENEMIES IN A TURN BASED MANNER AND EXPERIENCE A LONG AND GRIPPING STORY.
+</h2>
+</div>
+</div>
+ <p id = "contactus"></p><br><br>
+	  <div class = "row">
+	  <div class = "col-sm-4">
+	  <h1 style="text-shadow: 0 0 10px orange;font-family:binary;color:orange;font-size:60px;">CONTACT US</h1>
+	  <br><br>
+	  <h2 style = "text-shadow: 0 0 5px #FFFFFF;font-family:binary;">CONTACT US AT</h2>
+	  <h2 style = "text-shadow: 0 0 5px #FFFFFF;font-family:binary;font-size:27px;">SUPPORT@REDSEED.CC</h2><br><br>
+	  <h2 style = "text-shadow: 0 0 5px #FFFFFF;font-family:binary;">CONNECT WITH US ON SOCIAL MEDIA</h2>
+	  <span>
+<a href = "http://www.facebook.com/ayushrajpage"><img src = "https://ayushraj1024.files.wordpress.com/2019/01/if_facebook_circle_color_107175.png"/></a>
+<a href = "http://www.instagram.com/ayushraj1024"><img src = "https://ayushraj1024.files.wordpress.com/2018/11/1cb40-if_25_social_2609558.png"/></a>
+<a href = "http://www.twitter.com/ayushraj1024"><img src = "https://ayushraj1024.files.wordpress.com/2019/01/if_twitter_circle_color_107170.png"/></a>
+<a href = "https://www.linkedin.com/in/ayushraj1024/"><img src = "https://ayushraj1024.files.wordpress.com/2019/01/if_linkedin_circle_color_107178.png"/></a>
+<a href = "https://www.youtube.com/channel/UCa60akb5oVIMnUlCS1BovcA"><img src = "https://ayushraj1024.files.wordpress.com/2018/11/59648-if_youtube_317714.png"/></a>
+<a href = "https://in.pinterest.com/ayushraj1024/"><img src = "https://ayushraj1024.files.wordpress.com/2019/03/iconfinder_pinterest_834711_edited.png"/></a>
+<a href = "https://www.tumblr.com/blog/ayushraj1024"><img src = "https://ayushraj1024.files.wordpress.com/2019/03/if_tumblr_2308134.png"/></a>
+<a href = "https://www.reddit.com/user/keyboardsan"><img src = "https://ayushraj1024.files.wordpress.com/2019/03/iconfinder_social-36_1591892_edited.png"/></a>
+</span><br><br>
+	  </div>
+	  <div class = "col-sm-8">
+	  <img src = "images/crossed_swords.png" class = "img-fluid">
+	  </div>
+	  </div>
+	  <p id = "faqs"></p><br><br>
+      <h1 style="text-shadow: 0 0 10px orange;font-family:binary;color:orange;font-size:60px;">FAQs</h1>
+	  <br>
+      <div class = "row">
+	  <div class = "col-sm-8">
+	  <h5>What is this?</h5>
+	  <p>This is a website made for our upcoming visual novel RPG 'Niara:Rebellion Of the King'.</p>
+	  <br>
+	  <h5>What type of game will it be?</h5>
+	  <p>This will be a visual novel RPG. In this game you will have to react to dialogues between characters and also take part in menu
+	  based exploration of the game map and turn based battles.</p>
+	  <br>
+	  <h5>When will it be available?</h5>
+	  <p>This game will be released in 2019. Stay in touch with us to get updates on the exact date.</p>
+	  <br>
+	  <h5>Which platform will it be available in?</h5>
+	  <p>This game will be available on Android mobile platform.</p>
+	  <br>
+	  <h5>Will it be fun?</h5>
+	  <p>If you are a fan of visual novels then you will enjoy this game. If you are not a fan of visual novels then you may not enjoy it so much.</p>
+	  <br>
+	  <h5>Which engine did you make it in?</h5>
+	  <p>We are developing the game in Renpy.</p>
+	  <br>
+	  <h5>How did you program the battles and exploration part?</h5>
+	  <p>We used python to program the battles and the exploration part.</p>
+	  <br>
+	  <h5>Will it be free?</h5>
+	  <p>There will be a free and paid version of the game. The free version will let you play till the first chapter. You will have to purchase the
+	  paid version in order to play the subsequent chapters of the game.</p>
+	  <br>
+	  <h5>Where is your company based at?</h5>
+	  <p>Our company is based in India.</p>
+	  <br>
+	  <br><br>
+	  </div>
+	  <div class = "col-sm-4">
+	  </div>
+	  </div>
+  </div>
+</div>
+<h1 style="text-shadow: 0 0 10px orange;font-family:binary;color:orange;font-size:60px;">Don't forget to check them out:</h1> 
+	  <div class = "row">
+	  <div class = "col-sm-6">
+	  <br><br>
+	  <h2 style = "text-shadow: 0 0 5px #FFFFFF;font-family:binary;">
+	  FOR YOUR INTRANET NEEDS CHECK THEM OUT:</h2>
+	  <a href = "http://myhubintranet.com"><img src = "images/myintranethub.png" class = "img-fluid"/></a>
+	  </div>
+	  <div class = "col-sm-6">
+	  <br><br>
+	  <h2 style = "text-shadow: 0 0 5px #FFFFFF;font-family:binary;">
+	  THESE GUYS GOT A WORD 'UNSCRAMBLER'. PRETTY NEAT IF YOU ASK ME:</h2>
+	  <br><br>
+	  <a href = "http://word-grabber.com"><img src = "images/wordgrabber.png" class = "img-fluid"/></a>
+	  </div>
+	  </div>
+</div>
+<br><br><br><br>
+<div id="footer" class="jumbotron text-center" style="margin-bottom:0">
+  <p>Copyright © 2019 Redseed Technologies Private Limited. All rights reserved.</p>
+</div>
+
+</body>
+</html>

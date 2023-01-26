@@ -1,0 +1,88 @@
+@font-face {
+  font-family: binary;
+  src: url(binxchr.ttf);
+}
+@font-face {
+  font-family: viner;
+  src: url(VINERITC.TTF);
+}
+@font-face {
+  font-family: induction;
+  src: url(induction.ttf);
+}
+@font-face {
+  font-family: pricedown;
+  src: url(pricedown.ttf);
+}
+.footer {
+    background-color: white;
+    color: red;
+}
+footer {
+	background-color: rgba(0,0,0,0.8);
+	color:white;
+}
+.navbar {
+	background-color: rgba(0,0,0,0.5);
+	color:red;
+}
+nav {
+	background-color: rgba(0,0,0,0.8);
+	color:red;
+}
+a {
+	color:white;
+}
+.container-fluid>.row>.col-sm-12>.row>.col-sm-8>p,h3,h4 {
+	color:white;
+}
+.container-fluid>.row>.col-sm-12>.row>.col-sm-8>h5 {
+	color:white;
+	font-weight:bold;
+}
+.container-fluid>.row>.col-sm-12>.row>.col-sm-8>h1,h2 {
+	color:white;
+	font-weight:bold;
+}
+nav {
+	border-bottom: 1px solid rgba(255,255,255);
+}
+#footer {
+	border-top: 1px solid white;
+	background-color:rgba(0,0,0,0.8);
+}
+#footer>p {
+	color:white;
+}
+body {
+	background-image: url("images/background.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("../images/niara_poster.jpg");
+  height: 100%;
+}
+
+#overlay {
+  position: fixed; /* Sit on top of the page content *//* Hidden by default */
+  display:block;
+  top: 100;
+  left: 100;
+  right: 100;
+  bottom: 100;
+  padding:10px;
+  background-color: rgba(0,0,0,1); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
