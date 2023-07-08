@@ -106,7 +106,7 @@ $(document).ready(function(){
         <a class="nav-link" href="https://spark.adobe.com/page/6b6RXxOKUIlIC/" style = "color:white;">Press kit</a>
      </li>-->
 	 <li class="nav-item" style = "float:right;">
-        <a class="nav-link" href="https://blog.redseed.cc" style = "color:white;">Blog</a>
+        <a class="nav-link" href="https://redseed.cc/blog" style = "color:white;">Blog</a>
      </li>
     </ul>
   </div>  
@@ -310,7 +310,7 @@ $(document).ready(function(){
                   <!-- Footer Links -->
 
                   <!-- Copyright -->
-                  <div class="footer-copyright text-center py-3">Copyright © 2020 Redseed Game Studio. All rights reserved.
+                  <div class="footer-copyright text-center py-3">Copyright © <?php echo date("Y"); ?> Redseed Game Studio. All rights reserved.
                   </div>
                   <!-- Copyright -->
 
