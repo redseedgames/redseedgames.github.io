@@ -91,7 +91,35 @@ $(document).ready(function(){
 
 </head>
 <body style = "background-image:url('images/niara_battle_composition_background.png'); background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
-<div id="fb-root"></div>
+  <script>
+    // Replace the 'YOUR_RSS_FEED_URL' with the URL of the RSS feed from the Blogger blog
+    const rssFeedUrl = 'https://blog.redseed.cc/feeds/posts/default?alt=rss';
+
+    // Fetch the RSS feed using JavaScript Fetch API
+    fetch(rssFeedUrl)
+      .then(response => response.text())
+      .then(data => {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(data, 'text/xml');
+
+        // Parse and display the blog post entries
+        const items = xmlDoc.querySelectorAll('item');
+        let html = '<ul>';
+        items.forEach(item => {
+          const title = item.querySelector('title').textContent;
+          const link = item.querySelector('link').textContent;
+          html += `<li><a href="${link}">${title}</a></li>`;
+        });
+        html += '</ul>';
+
+        // Display the blog post entries in the 'rss-feed' div
+        document.getElementById('rss-feed').innerHTML = html;
+      })
+      .catch(error => {
+        console.error('Error fetching RSS feed:', error);
+      });
+  </script>
+  <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0&appId=628153337695745&autoLogAppEvents=1"></script>
 <nav class="navbar navbar-expand-md fixed-top">
   <a href = "index.html"><img src = "images/redseed_logo_edited_720p.png"></a>
@@ -229,6 +257,9 @@ $(document).ready(function(){
 <br><br>
 <h1 style="font-family:binary;color:red;">NEWS</h1> 
 <br><br>
+<div class="row">
+  <div id="rss-feed"></div>
+</div>
 <div class="row">
     <div class="col-sm-6" style = "background-color:rgba(0,0,0,0.5);padding:10px;">
 	 <img src = "images/kori_fable_cover_final_1.png" class = "img-fluid">
