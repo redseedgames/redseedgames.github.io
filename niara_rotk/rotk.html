@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Niara: Rebellion Of the King</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-  <script>
-  $(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
+	
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-SKS2TGH2Q5"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
 
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
+	gtag('config', 'G-SKS2TGH2Q5');
+	</script>
+	<title>Niara: Rebellion Of the King</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	// Add smooth scrolling to all links
+	$("a").on('click', function(event) {
 
-      // Store hash
-      var hash = this.hash;
+		// Make sure this.hash has a value before overriding default behavior
+		if (this.hash !== "") {
+		// Prevent default anchor click behavior
+		event.preventDefault();
 
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
-</script>
+		// Store hash
+		var hash = this.hash;
+
+		// Using jQuery's animate() method to add smooth page scroll
+		// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+		$('html, body').animate({
+			scrollTop: $(hash).offset().top
+		}, 800, function(){
+	
+			// Add hash (#) to URL when done scrolling (default click behavior)
+			window.location.hash = hash;
+		});
+		} // End if
+	});
+	});
+	</script>
 </head>
 <body style = "background-image:url('images/niara_kneeling_fire.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
 <nav class="navbar navbar-expand-md fixed-top" style = "background-color:rgba(0,0,0,0.8);">
