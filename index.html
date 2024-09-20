@@ -1,169 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-WMM5MJQ7');</script>
-  <!-- End Google Tag Manager -->
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WMM5MJQ7");
+    </script>
+    <!-- End Google Tag Manager -->
 
-  <title>Redseed Game Studio</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="We are working on Niara: Rebellion Of the King Visual Novel RPG at the moment. Follow us to see how the development is going.">
-  <meta name="keywords" content="Game, video games, mobile games, pc games, RPG, role playing games, visual novel rpg, visual novel games, visual novel">
-  <link rel="shortcut icon" type="image/png" href="images/redseed_logo.png"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-  <script>
-  $(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
+    <title>Redseed Game Studio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="We are working on Niara: Rebellion Of the King Visual Novel RPG at the moment. Follow us to see how the development is going."
+    />
+    <meta
+      name="keywords"
+      content="Game, video games, mobile games, pc games, RPG, role playing games, visual novel rpg, visual novel games, visual novel"
+    />
+    <link rel="shortcut icon" type="image/png" href="images/redseed_logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Add smooth scrolling to all links
+        $("a").on("click", function (event) {
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
 
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
+            // Store hash
+            var hash = this.hash;
 
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
-</script>
-
-<!--Script for newsletter subscription-->
-<script>
-$(document).ready(function(){
-  $("#subscribeButton").click(function(){
-    
-	//Fetching email address from the input field
-	var email = document.getElementById("usr").value;
-	
-	//Validating the fetched email address
-	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-	if(email.match(mailformat))
-	{
-		
-		//Sending request to server
-		$.post("subscribe.php",
-		{
-		email: email
-		},
-		function(data,status){
-			var messageData = JSON.parse(data);
-			document.getElementById("usr").value = "";
-			document.getElementById("usr").placeholder = messageData["message"];
-		});	
-	}
-	else
-	{
-		document.getElementById("usr").value = "";
-		document.getElementById("usr").placeholder = "Please Enter Valid Email Address";
-	}
-	
-  });
-});
-</script>
-
-<script>
-$(document).ready(function(){
-  $("#closeButton").click(function(){
-    $("#subscribeForm").remove();
-  });
-});
-</script>
-
-<script>
-$(document).ready(function(){
-  $("#overlayCloseButton").click(function(){
-    $("#overlay").remove();
-  });
-});
-</script>
-
-</head>
-<body style = "background-image:url('images/niara_battle_composition_background.png'); background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
-  
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMM5MJQ7"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  
-  <script>
-    // Replace the 'YOUR_RSS_FEED_URL' with the URL of the RSS feed from the Blogger blog
-    const rssFeedUrl = 'https://blog.redseed.cc/feeds/posts/default?alt=rss';
-
-    // Fetch the RSS feed using JavaScript Fetch API
-    fetch(rssFeedUrl)
-      .then(response => response.text())
-      .then(data => {
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(data, 'text/xml');
-
-        // Parse and display the blog post entries
-        const items = xmlDoc.querySelectorAll('item');
-        let html = '<ul>';
-        items.forEach(item => {
-          const title = item.querySelector('title').textContent;
-          const link = item.querySelector('link').textContent;
-          html += `<li><a href="${link}">${title}</a></li>`;
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $("html, body").animate(
+              {
+                scrollTop: $(hash).offset().top,
+              },
+              800,
+              function () {
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              }
+            );
+          } // End if
         });
-        html += '</ul>';
-
-        // Display the blog post entries in the 'rss-feed' div
-        document.getElementById('rss-feed').innerHTML = html;
-      })
-      .catch(error => {
-        console.error('Error fetching RSS feed:', error);
       });
-  </script>
-  <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0&appId=628153337695745&autoLogAppEvents=1"></script>
-<nav class="navbar navbar-expand-md fixed-top">
-  <a href = "index.html"><img src = "images/redseed_logo_edited_720p.png"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style = "color:white;">
-    <img src = "images/toggler_icon.png">
-	<!--<span class="navbar-toggler-icon"></span>-->
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar" style="margin-left:20px;">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#welcome" data-toggle="collapse" data-target=".navbar-collapse.show" style="color:white;">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href = "#games" data-toggle="collapse" data-target=".navbar-collapse.show" style = "color:white;">Games</a>
-      </li>
-	  <li class="nav-item">
-        <a class="nav-link" href = "#news" data-toggle="collapse" data-target=".navbar-collapse.show" style = "color:white;">News</a>
-      </li>	  
-	  <li class="nav-item">
-        <a class="nav-link" href = "https://blog.redseed.cc" style = "color:white;">Blog</a>
-      </li>
-	  <li class="nav-item">
-        <a class="nav-link" href = "#contact" data-toggle="collapse" data-target=".navbar-collapse.show" style = "color:white;">Contact</a>
-      </li>
-    </ul>
-  </div>  
-</nav>
-<div class="container">
-<!--<div id="overlay" class="row" style = "padding:10px;margin-top:50px;border-top: 1px solid white;border-right: 1px solid white;border-bottom: 1px solid white;border-left: 1px solid white;">
+    </script>
+
+    <!--Script for newsletter subscription-->
+    <script>
+      $(document).ready(function () {
+        $("#subscribeButton").click(function () {
+          //Fetching email address from the input field
+          var email = document.getElementById("usr").value;
+
+          //Validating the fetched email address
+          var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+          if (email.match(mailformat)) {
+            //Sending request to server
+            $.post(
+              "subscribe.php",
+              {
+                email: email,
+              },
+              function (data, status) {
+                var messageData = JSON.parse(data);
+                document.getElementById("usr").value = "";
+                document.getElementById("usr").placeholder =
+                  messageData["message"];
+              }
+            );
+          } else {
+            document.getElementById("usr").value = "";
+            document.getElementById("usr").placeholder =
+              "Please Enter Valid Email Address";
+          }
+        });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $("#closeButton").click(function () {
+          $("#subscribeForm").remove();
+        });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $("#overlayCloseButton").click(function () {
+          $("#overlay").remove();
+        });
+      });
+    </script>
+  </head>
+  <body
+    style="
+      background-image: url('images/niara_battle_composition_background.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+    "
+  >
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-WMM5MJQ7"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <script>
+      // Replace the 'YOUR_RSS_FEED_URL' with the URL of the RSS feed from the Blogger blog
+      const rssFeedUrl = "https://blog.redseed.cc/feeds/posts/default?alt=rss";
+      function fetchBloggerPosts() {
+      const script = document.createElement('script');
+      script.src = 'https://blog.redseed.cc/feeds/posts/default?alt=json-in-script&callback=handleBloggerData';
+      document.body.appendChild(script);
+    }
+
+    function handleBloggerData(data) {
+      const posts = data.feed.entry.slice(0, 10);  // Get 10 posts (5 rows, 2 per row)
+      const postList = document.getElementById('blog-posts');
+
+      posts.forEach(post => {
+        const title = post.title.$t;
+        const link = post.link.find(l => l.rel === 'alternate').href;
+        const contentSnippet = post.summary ? post.summary.$t : post.content.$t;
+        const content = post.content ? post.content.$t : '';
+        const excerpt = contentSnippet.split(' ').slice(0, 30).join(' ') + '...'; // Limit to 30 words for excerpt
+        const firstParagraph = extractFirstParagraph(contentSnippet);
+        const publishedDate = formatPublishedDate(post.published.$t);
+
+        // Fetch image (usually the first image in the content)
+        let imgSrc = '';
+        // if (post.media$thumbnail) {
+        //   imgSrc = post.media$thumbnail.url;
+        // } else {
+        //   // Fallback image if none is found
+        //   imgSrc = 'https://via.placeholder.com/300x200?text=No+Image';
+        // }
+        imgSrc = extractLargeImage(content) || 'https://via.placeholder.com/300x200?text=No+Image';
+
+        // Create post card
+        const col = document.createElement('div');
+        col.className = 'col-md-6';  // 2 posts per row
+        col.innerHTML = `
+          <div class="post-card">
+            <a href="${link}" target="_blank">
+              <img src="${imgSrc}" alt="${title}" class='img-fluid'>
+              <h5 style="font-family: binary;  text-transform: uppercase;">${title}</h5>
+            </a>
+            <p class="post-date" style="color: grey;">${publishedDate}</p>
+            <p class="post-excerpt" style="color: white">${extractFirstParagraph(content)}</p>
+            <br/>
+          </div>
+        `;
+
+        // Append to the blog posts grid
+        postList.appendChild(col);
+      });
+    }
+
+    function extractFirstParagraph(content) {
+      // Remove <img> tags and any script/style elements
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(content, 'text/html');
+
+      // Remove any <img> tags
+      const imgTags = doc.querySelectorAll('img');
+      imgTags.forEach(img => img.remove());
+
+      // Get the text content
+      let textContent = doc.body.textContent || 'No content available';
+
+      // Trim to remove any excessive whitespace
+      textContent = textContent.trim();
+
+      // Return the first 2-3 sentences for the excerpt
+      const sentences = textContent.split('. ');
+      return sentences.slice(0, 2).join('. ') + '.';
+    }
+
+    function extractLargeImage(content) {
+      // Extract the first image in the post content
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(content, 'text/html');
+      const imgTag = doc.querySelector('img');  // Get the first <img> tag
+      if (imgTag) {
+        let imgSrc = imgTag.src;
+        // If Blogger provides a smaller image size, replace it with a larger one
+        imgSrc = imgSrc.replace(/s72\-c/, 's600');  // Replace small image size with larger size (e.g., s600)
+        return imgSrc;
+      }
+      return null;  // No image found
+    }
+    function formatPublishedDate(publishedDate) {
+      const date = new Date(publishedDate);
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      return date.toLocaleDateString(undefined, options);  // Format date like: January 1, 2023
+    }
+    // Call function to display blog posts
+    fetchBloggerPosts();
+    </script>
+    <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0&appId=628153337695745&autoLogAppEvents=1"
+    ></script>
+    <nav class="navbar navbar-expand-md fixed-top">
+      <a href="index.html"><img src="images/redseed_logo_edited_720p.png" /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavbar"
+        style="color: white"
+      >
+        <img src="images/toggler_icon.png" />
+        <!--<span class="navbar-toggler-icon"></span>-->
+      </button>
+      <div
+        class="collapse navbar-collapse"
+        id="collapsibleNavbar"
+        style="margin-left: 20px"
+      >
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#welcome"
+              data-toggle="collapse"
+              data-target=".navbar-collapse.show"
+              style="color: white"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#games"
+              data-toggle="collapse"
+              data-target=".navbar-collapse.show"
+              style="color: white"
+              >Games</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#news"
+              data-toggle="collapse"
+              data-target=".navbar-collapse.show"
+              style="color: white"
+              >News</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://blog.redseed.cc"
+              style="color: white"
+              >Blog</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#contact"
+              data-toggle="collapse"
+              data-target=".navbar-collapse.show"
+              style="color: white"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <!--<div id="overlay" class="row" style = "padding:10px;margin-top:50px;border-top: 1px solid white;border-right: 1px solid white;border-bottom: 1px solid white;border-left: 1px solid white;">
     <div class="col-xs-6">
 		<h4  style="text-shadow: 0 0 5px #FFFFFF;font-family:binary;">NIARA: REBELLION OF THE KING SUMMER SALE 2021 | 50% OFF</h4>
 	</div>
@@ -176,224 +315,350 @@ $(document).ready(function(){
     </div>
 	</div>
 </div>-->
-<p id = "welcome"></p>
-  <div id="demo" class="carousel slide" data-ride="carousel">
-  <br><br><br>
-  <!-- Indicators -->
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-	<li data-target="#demo" data-slide-to="2"></li>
-  </ul>
+      <p id="welcome"></p>
+      <div id="demo" class="carousel slide" data-ride="carousel">
+        <br /><br /><br />
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
 
-  <!-- The slideshow -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="images/koris_fable_website_cover_new.png" alt="Kori's Fable" class = "img-fluid">
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="images/koris_fable_website_cover_new.png"
+              alt="Kori's Fable"
+              class="img-fluid"
+            />
+          </div>
+          <div class="carousel-item">
+            <img src="images/niara_poster.jpg" alt="Niara" class="img-fluid" />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="images/a_sweet_meeting_poster.jpg"
+              alt="A Sweet Meeting"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+      <p id="games"></p>
+      <br /><br />
+      <h1 style="font-family: binary; color: red">GAMES</h1>
+      <br /><br />
+      <div
+        class="row"
+        style="background-color: rgba(0, 0, 0, 0.5); padding: 10px"
+      >
+        <div class="col-sm-6">
+          <img src="images/koris_fable_text.png" class="img-fluid" />
+          <br /><br />
+          <h4 style="text-shadow: 0 0 5px #ffffff; font-family: binary">
+            IN A WORLD OF TWISTED MAGIC AND BROKEN SPIRITS BE A GIRL WITH A
+            MISSION
+          </h4>
+          <!--<a href = "http://niara.redseed.cc" class = "btn btn-danger" role = "button" style = "color:white;margin:10px;">Visit Website</a>-->
+          <a
+            href="korisfable.html"
+            class="btn btn-danger"
+            role="button"
+            style="color: white; margin: 10px"
+            >Learn More</a
+          >
+          <!--<a href = "https://play.google.com/store/apps/details?id=cc.redseed.sweetrebirth"><img src = "images/google-play-badge.png" style = "width:150px;height:auto;margin:10px;"/></a>-->
+          <h4 style="text-shadow: 0 0 5px #ffffff; font-family: binary">
+            AVAILABLE ON:
+          </h4>
+          <!--Google Play and Itch.io button images-->
+          <div class="d-inline">
+            <a
+              href="https://play.google.com/store/apps/details?id=cc.redseed.korisfable"
+              ><img
+                src="images/google-play-badge.png"
+                style="
+                  margin-right: 10px;
+                  margin-top: 10px;
+                  width: 150px;
+                  height: auto;
+                "
+            /></a>
+            <a href="https://redseedgames.itch.io/koris-fable"
+              ><img
+                src="images/itch_badge.png"
+                style="width: 150px; height: auto; margin: 10px"
+            /></a>
+            <a
+              href="https://store.steampowered.com/app/2280260/Koris_Fable_Visual_Novel/"
+              ><img
+                src="images/steam.jpg"
+                style="width: 120px; height: auto; margin: 10px"
+            /></a>
+          </div>
+          <br />
+        </div>
+        <div class="col-sm-6">
+          <img
+            src="images/koris_fable_second_website_cover.png"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+      <br />
+      <div
+        class="row"
+        style="background-color: rgba(0, 0, 0, 0.5); padding: 10px"
+      >
+        <div class="col-sm-6">
+          <img src="images/niara_sign_hd.png" class="img-fluid" />
+          <img
+            src="images/rebellion_of_the_king_text_hd.png"
+            class="img-fluid"
+          />
+          <h4 style="text-shadow: 0 0 5px #ffffff; font-family: binary">
+            VISUAL NOVEL ROLE PLAYING GAME WITH TURN BASED COMBAT AND MAP
+            EXPLORATION.
+          </h4>
+          <a
+            href="niara_rotk/index.html"
+            class="btn btn-danger"
+            role="button"
+            style="color: white; margin: 10px"
+            >Visit Website</a
+          >
+          <a
+            href="https://play.google.com/store/apps/details?id=cc.redseed.niararotk"
+            ><img
+              src="images/google-play-badge.png"
+              style="width: 150px; height: auto; margin: 10px"
+          /></a>
+          <a
+            href="https://store.steampowered.com/app/1082730/Niara_Rebellion_Of_the_King_Visual_Novel_RPG/?beta=0"
+            ><img
+              src="images/steam.jpg"
+              style="width: 120px; height: auto; margin: 10px"
+          /></a>
+          <br /><br />
+        </div>
+        <div class="col-sm-6">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/619RAl3ST-s"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div
+        class="row"
+        style="background-color: rgba(0, 0, 0, 0.5); padding: 10px"
+      >
+        <div class="col-sm-6">
+          <img src="images/a_sweet_meeting_text.png" class="img-fluid" />
+          <br /><br />
+          <h4 style="text-shadow: 0 0 5px #ffffff; font-family: binary">
+            A SHORT AND SWEET KINETIC NOVEL. GET IT FOR FREE.
+          </h4>
+          <!--<a href = "http://niara.redseed.cc" class = "btn btn-danger" role = "button" style = "color:white;margin:10px;">Visit Website</a>-->
+          <a
+            href="https://play.google.com/store/apps/details?id=cc.redseed.sweetrebirth"
+            ><img
+              src="images/google-play-badge.png"
+              style="width: 150px; height: auto; margin: 10px"
+          /></a>
+          <br /><br />
+        </div>
+        <div class="col-sm-6">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/f5Va9luGSyU"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+      <h4
+        style="
+          text-shadow: 0 0 5px #ffffff;
+          font-family: binary;
+          font-size: 30px;
+        "
+      >
+        WELL, THAT'S IT. THAT'S ALL THE GAMES WE HAVE RIGHT NOW. PLEASE FOLLOW
+        US ON ONE OF THESE SOCIAL SITES TO GET NOTIFICATIONS OF ANY NEW GAMES WE
+        RELEASE.
+      </h4>
+      <br />
+      <p id="news"></p>
+      <br /><br />
+      <h1 style="font-family: binary; color: red">NEWS</h1>
+      <br /><br />
+      <div id="blog-posts" class="row blog-posts" style="background-color: rgba(0, 0, 0, 0.5); padding: 10px"></div>
+      
+      <center>
+        <a
+          href="https://blog.redseed.cc"
+          class="btn btn-danger"
+          role="button"
+          style="color: white; margin: 10px"
+          >Visit the blog for more news</a
+        >
+      </center>
+      
+      <p id="contact"></p>
+      <br /><br />
+      <h1 style="font-family: binary; color: red">CONTACT</h1>
+      <br /><br />
+      <div class="row">
+        <div class="col-sm-6">
+          <h4 style="text-shadow: 0 0 5px #ffffff; font-family: binary">
+            MAIL US AT:
+          </h4>
+          <h4 style="text-shadow: 0 0 5px #ffffff; font-family: binary">
+            SUPPORT@REDSEED.CC
+          </h4>
+          <h4 style="text-shadow: 0 0 5px #ffffff; font-family: binary">
+            CONNECT WITH US ON:
+          </h4>
+          <span>
+            <a href="http://www.facebook.com/redseedgames"
+              ><img
+                src="https://ayushraj1024.files.wordpress.com/2019/01/if_facebook_circle_color_107175.png"
+            /></a>
+            <a href="http://www.instagram.com/redseedgames"
+              ><img
+                src="https://ayushraj1024.files.wordpress.com/2018/11/1cb40-if_25_social_2609558.png"
+            /></a>
+            <a href="http://www.twitter.com/redseedgames"
+              ><img
+                src="https://ayushraj1024.files.wordpress.com/2019/01/if_twitter_circle_color_107170.png"
+            /></a>
+            <a href="https://www.linkedin.com/company/redseedgames"
+              ><img
+                src="https://ayushraj1024.files.wordpress.com/2019/01/if_linkedin_circle_color_107178.png"
+            /></a>
+            <a href="https://www.youtube.com/channel/UC-__kq1bWNFzPr2r5DlJ8ZA"
+              ><img
+                src="https://ayushraj1024.files.wordpress.com/2018/11/59648-if_youtube_317714.png"
+            /></a>
+            <a href="https://www.tumblr.com/blog/redseedgames"
+              ><img
+                src="https://ayushraj1024.files.wordpress.com/2019/03/if_tumblr_2308134.png"
+            /></a>
+          </span>
+        </div>
+        <div class="col-sm-6"></div>
+      </div>
     </div>
-	<div class="carousel-item">
-      <img src="images/niara_poster.jpg" alt="Niara" class = "img-fluid">
-    </div>
-	<div class="carousel-item">
-      <img src="images/a_sweet_meeting_poster.jpg" alt="A Sweet Meeting" class = "img-fluid">
-    </div>
-  </div>
+    <br /><br /><br /><br />
+    <!-- Footer -->
+    <footer class="page-footer font-small blue pt-4">
+      <!-- Footer Links -->
+      <div class="container-fluid text-center text-md-left">
+        <!-- Grid row -->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-6 mt-md-0 mt-3">
+            <!-- Content -->
+            <h5 class="text-uppercase">Reach Us</h5>
+            2/2 Dilkusha Park, New Katra, Prayagraj, Uttar Pradesh, India,
+            211002
+          </div>
+          <!-- Grid column -->
 
-  <!-- Left and right controls -->
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
+          <hr class="clearfix w-100 d-md-none pb-3" />
 
-</div>
-<p id = "games"></p>
-<br><br>
-<h1 style="font-family:binary;color:red;">GAMES</h1> 
-<br><br>
-<div class="row" style = "background-color:rgba(0,0,0,0.5);padding:10px;">
-    <div class="col-sm-6">
-     <img src = "images/koris_fable_text.png" class = "img-fluid">
-	 <br><br>
-	 <h4  style="text-shadow: 0 0 5px #FFFFFF;font-family:binary;">IN A WORLD OF TWISTED MAGIC AND BROKEN SPIRITS BE A GIRL WITH A MISSION</h4>
-<!--<a href = "http://niara.redseed.cc" class = "btn btn-danger" role = "button" style = "color:white;margin:10px;">Visit Website</a>-->
-	 <a href = "korisfable.html" class = "btn btn-danger" role = "button" style = "color:white;margin:10px;">Learn More</a>
-	 <!--<a href = "https://play.google.com/store/apps/details?id=cc.redseed.sweetrebirth"><img src = "images/google-play-badge.png" style = "width:150px;height:auto;margin:10px;"/></a>-->
-	 <h4 style = "text-shadow: 0 0 5px #FFFFFF;font-family:binary;">AVAILABLE ON:</h4>
-	  <!--Google Play and Itch.io button images-->
-	  <div class = "d-inline"><a href = "https://play.google.com/store/apps/details?id=cc.redseed.korisfable"><img src = "images/google-play-badge.png" style = "margin-right:10px;margin-top:10px;width:150px;height:auto;"/></a>
-	  <a href = "https://redseedgames.itch.io/koris-fable"><img src = "images/itch_badge.png" style = "width:150px;height:auto;margin:10px;"/></a>
-    <a href = "https://store.steampowered.com/app/2280260/Koris_Fable_Visual_Novel/"><img src = "images/steam.jpg" style = "width:120px;height:auto;margin:10px;"/></a>
-	  </div>
-	 <br>
-  </div>
-  <div class = "col-sm-6">
-<img src = "images/koris_fable_second_website_cover.png" class = "img-fluid">
-</div>
-</div>
-<br>
-<div class="row" style = "background-color:rgba(0,0,0,0.5);padding:10px;">
-    <div class="col-sm-6">
-     <img src = "images/niara_sign_hd.png" class = "img-fluid">
-	 <img src = "images/rebellion_of_the_king_text_hd.png" class = "img-fluid">
-	 <h4  style="text-shadow: 0 0 5px #FFFFFF;font-family:binary;">VISUAL NOVEL ROLE PLAYING GAME WITH TURN BASED COMBAT AND MAP EXPLORATION.</h4>
-	 <a href = "niara_rotk/index.html" class = "btn btn-danger" role = "button" style = "color:white;margin:10px;">Visit Website</a>
-	 <a href = "https://play.google.com/store/apps/details?id=cc.redseed.niararotk"><img src = "images/google-play-badge.png" style = "width:150px;height:auto;margin:10px;"/></a>
-	 <a href = "https://store.steampowered.com/app/1082730/Niara_Rebellion_Of_the_King_Visual_Novel_RPG/?beta=0"><img src = "images/steam.jpg" style = "width:120px;height:auto;margin:10px;"/></a>
-	 <br><br>
-  </div>
-  <div class = "col-sm-6">
-<div class="embed-responsive embed-responsive-16by9">
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/619RAl3ST-s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		</div>
-	
-  </div>
-</div>
-<br>
-<div class="row" style = "background-color:rgba(0,0,0,0.5);padding:10px;">
-    <div class="col-sm-6">
-     <img src = "images/a_sweet_meeting_text.png" class = "img-fluid">
-	 <br><br>
-	 <h4  style="text-shadow: 0 0 5px #FFFFFF;font-family:binary;">A SHORT AND SWEET KINETIC NOVEL. GET IT FOR FREE.</h4>
-<!--<a href = "http://niara.redseed.cc" class = "btn btn-danger" role = "button" style = "color:white;margin:10px;">Visit Website</a>-->
-	 <a href = "https://play.google.com/store/apps/details?id=cc.redseed.sweetrebirth"><img src = "images/google-play-badge.png" style = "width:150px;height:auto;margin:10px;"/></a>
-	 <br><br>
-  </div>
-  <div class = "col-sm-6">
-<div class="embed-responsive embed-responsive-16by9">
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/f5Va9luGSyU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-</div>
-</div>
-<br><br>
-<h4  style="text-shadow: 0 0 5px #FFFFFF;font-family:binary;font-size:30px;">WELL, THAT'S IT. THAT'S ALL THE GAMES WE HAVE RIGHT NOW. PLEASE FOLLOW US ON ONE OF THESE SOCIAL SITES TO GET NOTIFICATIONS OF ANY NEW GAMES WE RELEASE.</h4>
-<br>
-<p id = "news"></p>
-<br><br>
-<h1 style="font-family:binary;color:red;">NEWS</h1> 
-<br><br>
-<div class="row">
-  <div id="rss-feed"></div>
-</div>
-<div class="row">
-    <div class="col-sm-6" style = "background-color:rgba(0,0,0,0.5);padding:10px;">
-	 <img src = "images/kori_fable_cover_final_1.png" class = "img-fluid">
-	 <h4  style="font-family:binary;">A LITTLE DEVLOG OF OUR NEW GAME KORI'S FABLE</h4>
-	 <h6 style="color:white;">We have started working on a new visual novel game called Kori's Fable. This time we are going to go all out in structuring our world and fleshing it out completely before we begin to write the characters. The chapters and the scenes in the story will come much later when we had done fleshing out our story world completely.</h6>
-	 <a href = "https://blog.redseed.cc/2020/01/a-little-devlog-of-our-new-game-koris.html" class = "btn btn-danger" role = "button" style = "color:white;margin:10px;">Read More</a>
-	 <br><br>
-  </div>
-    <div class="col-sm-6" style = "background-color:rgba(0,0,0,0.5);padding:10px;">
-     <img src = "https://1.bp.blogspot.com/-Bj4FHxlWE8A/XgsKHNnIcgI/AAAAAAAAFGE/JZTOeZNy8lgGPFV-2C8SG328hSEuuvXigCLcBGAsYHQ/s1600/community_group_header.jpg" class = "img-fluid">
-	 <br><br>
-	 <h4  style="font-family:binary;">NIARA ROTK DEVLOG | MARKETING THE GAME</h4>
-	 <h6 style="color:white;">Marketing your video game is a life long process. It never ends. You start marketing your game from the day you first think about making it. This is true for all products and services under the sun. The marketing process goes on until either you die or your products or services die.</h6>
-	 <a href = "https://blog.redseed.cc/2019/12/niara-rotk-devlog-marketing-game.html" class = "btn btn-danger" role = "button" style = "color:white;margin:10px;">Read More</a>
-	 <br><br>
-  </div>
-</div>
-<center>
-<a href = "https://blog.redseed.cc" class = "btn btn-danger" role = "button" style = "color:white;margin:10px;">Visit the blog for more news</a>
-</center>
-<p id = "contact"></p>
-<br><br>
-<h1 style="font-family:binary;color:red;">CONTACT</h1> 
-<br><br>
-<div class="row">
-    <div class="col-sm-6">
-     <h4  style="text-shadow: 0 0 5px #FFFFFF;font-family:binary;">MAIL US AT:</h4>
-	 <h4  style="text-shadow: 0 0 5px #FFFFFF;font-family:binary;">SUPPORT@REDSEED.CC</h4>
-	 <h4 style="text-shadow: 0 0 5px #FFFFFF;font-family:binary;">CONNECT WITH US ON:</h4>
-	 <span>
-<a href = "http://www.facebook.com/redseedgames"><img src = "https://ayushraj1024.files.wordpress.com/2019/01/if_facebook_circle_color_107175.png"/></a>
-<a href = "http://www.instagram.com/redseedgames"><img src = "https://ayushraj1024.files.wordpress.com/2018/11/1cb40-if_25_social_2609558.png"/></a>
-<a href = "http://www.twitter.com/redseedgames"><img src = "https://ayushraj1024.files.wordpress.com/2019/01/if_twitter_circle_color_107170.png"/></a>
-<a href = "https://www.linkedin.com/company/redseedgames"><img src = "https://ayushraj1024.files.wordpress.com/2019/01/if_linkedin_circle_color_107178.png"/></a>
-<a href = "https://www.youtube.com/channel/UC-__kq1bWNFzPr2r5DlJ8ZA"><img src = "https://ayushraj1024.files.wordpress.com/2018/11/59648-if_youtube_317714.png"/></a>
-<a href = "https://www.tumblr.com/blog/redseedgames"><img src = "https://ayushraj1024.files.wordpress.com/2019/03/if_tumblr_2308134.png"/></a>
-</span>
-  </div>
-  <div class = "col-sm-6">
-  
-  </div>
-</div>
-</div>
-<br><br><br><br>
- <!-- Footer -->
-              <footer class="page-footer font-small blue pt-4">
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+            <!-- Links -->
+            <h5 class="text-uppercase">Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="terms_and_conditions.html">Terms and Conditions</a>
+              </li>
+              <li>
+                <a href="privacy_policy.html">Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Grid column -->
 
-                  <!-- Footer Links -->
-                  <div class="container-fluid text-center text-md-left">
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+            <!-- Links -->
+            <h5 class="text-uppercase">Follow us</h5>
 
-                    <!-- Grid row -->
-                    <div class="row">
+            <ul class="list-unstyled">
+              <li>
+                <span>
+                  <a href="http://www.facebook.com/redseedgames"
+                    ><img
+                      src="https://ayushraj1024.files.wordpress.com/2019/01/if_facebook_circle_color_107175.png"
+                  /></a>
+                  <a href="http://www.instagram.com/redseedgames"
+                    ><img
+                      src="https://ayushraj1024.files.wordpress.com/2018/11/1cb40-if_25_social_2609558.png"
+                  /></a>
+                  <a href="http://www.twitter.com/redseedgames"
+                    ><img
+                      src="https://ayushraj1024.files.wordpress.com/2019/01/if_twitter_circle_color_107170.png"
+                  /></a>
+                  <a href="https://www.linkedin.com/company/redseedgames"
+                    ><img
+                      src="https://ayushraj1024.files.wordpress.com/2019/01/if_linkedin_circle_color_107178.png"
+                  /></a>
+                  <a
+                    href="https://www.youtube.com/channel/UC-__kq1bWNFzPr2r5DlJ8ZA"
+                    ><img
+                      src="https://ayushraj1024.files.wordpress.com/2018/11/59648-if_youtube_317714.png"
+                  /></a>
+                  <a href="https://www.tumblr.com/blog/redseedgames"
+                    ><img
+                      src="https://ayushraj1024.files.wordpress.com/2019/03/if_tumblr_2308134.png"
+                  /></a>
+                </span>
+              </li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+      <!-- Footer Links -->
 
-                      <!-- Grid column -->
-                      <div class="col-md-6 mt-md-0 mt-3">
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">
+        Copyright ©
+        <?php echo date("Y"); ?>
+        Redseed Game Studio. All rights reserved.
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
 
-                        <!-- Content -->
-                        <h5 class="text-uppercase">Reach Us</h5>
-						2/2 Dilkusha Park, New Katra, Prayagraj, Uttar Pradesh, India, 211002
-                      </div>
-                      <!-- Grid column -->
-
-                      <hr class="clearfix w-100 d-md-none pb-3">
-
-                      <!-- Grid column -->
-                      <div class="col-md-3 mb-md-0 mb-3">
-
-                          <!-- Links -->
-						  <h5 class="text-uppercase">Links</h5>
-                          <ul class="list-unstyled">
-                            <li>
-                              <a href="terms_and_conditions.html">Terms and Conditions</a>
-                            </li>
-                            <li>
-                              <a href="privacy_policy.html">Privacy Policy</a>
-                            </li>
-                          </ul>
-
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-3 mb-md-0 mb-3">
-
-                          <!-- Links -->
-                          <h5 class="text-uppercase">Follow us</h5>
-
-                          <ul class="list-unstyled">
-                            <li>
-                              <span>
-<a href = "http://www.facebook.com/redseedgames"><img src = "https://ayushraj1024.files.wordpress.com/2019/01/if_facebook_circle_color_107175.png"/></a>
-<a href = "http://www.instagram.com/redseedgames"><img src = "https://ayushraj1024.files.wordpress.com/2018/11/1cb40-if_25_social_2609558.png"/></a>
-<a href = "http://www.twitter.com/redseedgames"><img src = "https://ayushraj1024.files.wordpress.com/2019/01/if_twitter_circle_color_107170.png"/></a>
-<a href = "https://www.linkedin.com/company/redseedgames"><img src = "https://ayushraj1024.files.wordpress.com/2019/01/if_linkedin_circle_color_107178.png"/></a>
-<a href = "https://www.youtube.com/channel/UC-__kq1bWNFzPr2r5DlJ8ZA"><img src = "https://ayushraj1024.files.wordpress.com/2018/11/59648-if_youtube_317714.png"/></a>
-<a href = "https://www.tumblr.com/blog/redseedgames"><img src = "https://ayushraj1024.files.wordpress.com/2019/03/if_tumblr_2308134.png"/></a>
-</span>
-                            </li>
-                          </ul>
-
-                        </div>
-                        <!-- Grid column -->
-
-                    </div>
-                    <!-- Grid row -->
-
-                  </div>
-                  <!-- Footer Links -->
-
-                  <!-- Copyright -->
-                  <div class="footer-copyright text-center py-3">Copyright © <?php echo date("Y"); ?> Redseed Game Studio. All rights reserved.
-                  </div>
-                  <!-- Copyright -->
-
-                </footer>
-                <!-- Footer -->
-
-<!--Newsletter subscription banner-->
-<!-- <div id="subscribeForm" class="container" style="margin-left:0px;margin-right:0px;padding-left:0px;padding-right:0px;position:fixed;bottom:0;float:center;">
+    <!--Newsletter subscription banner-->
+    <!-- <div id="subscribeForm" class="container" style="margin-left:0px;margin-right:0px;padding-left:0px;padding-right:0px;position:fixed;bottom:0;float:center;">
 	<div class = "row" style="background-color:rgba(0,0,0,0.9);border-top: 1px solid white;border-right: 1px solid white;">
 		<div class="col-sm-6">
 			<center>
@@ -414,7 +679,6 @@ $(document).ready(function(){
         </center>
 		</div>
 	</div>
-</div> -->				
-
-</body>
+</div> -->
+  </body>
 </html>
