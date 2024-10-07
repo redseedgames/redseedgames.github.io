@@ -253,7 +253,7 @@
           <li class="nav-item">
             <a
               class="nav-link"
-              href="#welcome"
+              href="index.html#welcome"
               data-toggle="collapse"
               data-target=".navbar-collapse.show"
               style="color: white"
@@ -263,8 +263,7 @@
           <li class="nav-item">
             <a
               class="nav-link"
-              href="#games"
-              data-toggle="collapse"
+              href="games.html"
               data-target=".navbar-collapse.show"
               style="color: white"
               >Games</a
@@ -283,9 +282,9 @@
           <li class="nav-item">
             <a
               class="nav-link"
-              href="https://blog.redseed.cc"
+              href="blogs.html"
               style="color: white"
-              >Blog</a
+              >Blogs</a
             >
           </li>
           <li class="nav-item">
@@ -518,7 +517,7 @@
       
       <center>
         <a
-          href="https://blog.redseed.cc"
+          href="blogs.html"
           class="btn btn-danger"
           role="button"
           style="color: white; margin: 10px"
@@ -650,35 +649,15 @@
       <!-- Copyright -->
       <div class="footer-copyright text-center py-3">
         Copyright ©
-        <?php echo date("Y"); ?>
+        <span id="current-year"></span>
         Redseed Game Studio. All rights reserved.
       </div>
       <!-- Copyright -->
     </footer>
     <!-- Footer -->
-
-    <!--Newsletter subscription banner-->
-    <!-- <div id="subscribeForm" class="container" style="margin-left:0px;margin-right:0px;padding-left:0px;padding-right:0px;position:fixed;bottom:0;float:center;">
-	<div class = "row" style="background-color:rgba(0,0,0,0.9);border-top: 1px solid white;border-right: 1px solid white;">
-		<div class="col-sm-6">
-			<center>
-				<h2 style = "text-shadow: 0 0 5px #FFFFFF;font-family:binary;">
-				SUBSCRIBE TO OUR NEWSLETTER
-				</h2>
-			</center>
-		</div>
-		<div class="col-sm-3" style="padding-top:5px;">
-				<center>
-				<input type="text" class="form-control" id="usr" placeholder = "Enter Email" style="margin-left:10px;margin-right:10px;">
-				</center>
-		</div>
-		<div class="col-sm-3" style="padding-top:5px;padding-bottom:5px;">
-				<center>
-				<button id="subscribeButton" class="btn btn-danger">Subscribe</button>
-				<button style="margin-left:10px;" id="closeButton" class="btn btn-danger">Close</button>
-        </center>
-		</div>
-	</div>
-</div> -->
+    <script>
+      const currentYear = new Date().getFullYear();
+      document.getElementById('current-year').textContent = currentYear;
+    </script>
   </body>
 </html>

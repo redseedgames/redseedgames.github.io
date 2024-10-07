@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WMM5MJQ7");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <title>Redseed Game Studio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="We are working on Niara: Rebellion Of the King Visual Novel RPG at the moment. Follow us to see how the development is going."
+    />
+    <meta
+      name="keywords"
+      content="Game, video games, mobile games, pc games, RPG, role playing games, visual novel rpg, visual novel games, visual novel"
+    />
+    <link rel="shortcut icon" type="image/png" href="images/redseed_logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Add smooth scrolling to all links
+        $("a").on("click", function (event) {
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $("html, body").animate(
+              {
+                scrollTop: $(hash).offset().top,
+              },
+              800,
+              function () {
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              }
+            );
+          } // End if
+        });
+      });
+    </script>
+
+    <!--Script for newsletter subscription-->
+    <script>
+      $(document).ready(function () {
+        $("#subscribeButton").click(function () {
+          //Fetching email address from the input field
+          var email = document.getElementById("usr").value;
+
+          //Validating the fetched email address
+          var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+          if (email.match(mailformat)) {
+            //Sending request to server
+            $.post(
+              "subscribe.php",
+              {
+                email: email,
+              },
+              function (data, status) {
+                var messageData = JSON.parse(data);
+                document.getElementById("usr").value = "";
+                document.getElementById("usr").placeholder =
+                  messageData["message"];
+              }
+            );
+          } else {
+            document.getElementById("usr").value = "";
+            document.getElementById("usr").placeholder =
+              "Please Enter Valid Email Address";
+          }
+        });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $("#closeButton").click(function () {
+          $("#subscribeForm").remove();
+        });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $("#overlayCloseButton").click(function () {
+          $("#overlay").remove();
+        });
+      });
+    </script>
+    <style>
+      .post-container {
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      .post-title {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+      .post-date {
+        font-size: 1rem;
+        color: #999;
+        margin-bottom: 20px;
+      }
+      .post-content {
+        font-size: 1.1rem;
+      }
+      .mt-10 {
+        margin-top: 5rem; /* 10 times the base font size (usually ~160px) */
+      }
+      .mb-10 {
+        margin-bottom: 5rem;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      background-image: url('images/niara_battle_composition_background.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+    "
+  >
+    <nav class="navbar navbar-expand-md fixed-top">
+      <a href="index.html"><img src="images/redseed_logo_edited_720p.png" /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavbar"
+        style="color: white"
+      >
+        <img src="images/toggler_icon.png" />
+        <!--<span class="navbar-toggler-icon"></span>-->
+      </button>
+      <div
+        class="collapse navbar-collapse"
+        id="collapsibleNavbar"
+        style="margin-left: 20px"
+      >
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="index.html"
+              data-target=".navbar-collapse.show"
+              style="color: white"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="games.html"
+              data-toggle="collapse"
+              data-target=".navbar-collapse.show"
+              style="color: white"
+              >Games</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="blogs.html"
+              style="color: white"
+              >Blogs</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div
+        id="post"
+        class="post-container mt-10 mb-10"
+        style="background-color: rgba(0, 0, 0, 0.5); padding: 10px"
+      >
+        <h1
+          id="post-title"
+          class="post-title"
+          style="font-family: binary; text-transform: uppercase; color: white"
+        >
+          Loading...
+        </h1>
+        <p id="post-date" class="post-date" style="color: grey;"></p>
+        <div
+          id="post-content"
+          class="post-content"
+          style="color: lightslategrey"
+        ></div>
+      </div>
+    </div>
+
+    <script>
+      // Helper function to get the query parameter from the URL
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      // Fetch the specific blog post by ID using JSONP
+      function fetchBlogPost(postId) {
+        const feedUrl = `https://blog.redseed.cc/feeds/posts/default/${postId}?alt=json-in-script&callback=handlePostData`;
+
+        const script = document.createElement("script");
+        script.src = feedUrl;
+        document.body.appendChild(script);
+      }
+
+      // Callback function to handle the JSONP response
+      function handlePostData(data) {
+        const post = data.entry;
+        const title = post.title.$t;
+        const content = post.content.$t;
+        const publishedDate = formatPublishedDate(post.published.$t);
+
+        // Display post title, date, and content
+        document.getElementById("post-title").textContent = title;
+        document.getElementById("post-date").textContent = publishedDate;
+        document.getElementById("post-content").innerHTML = content; // Render HTML content
+      }
+
+      // Format the published date
+      function formatPublishedDate(publishedDate) {
+        const date = new Date(publishedDate);
+        const options = { year: "numeric", month: "long", day: "numeric" };
+        return date.toLocaleDateString(undefined, options);
+      }
+
+      // Get the postId from the URL and fetch the post
+      const postId = getQueryParam("postId");
+      if (postId) {
+        fetchBlogPost(postId);
+      } else {
+        console.error("No post ID found in the URL");
+        document.getElementById("post-title").textContent =
+          "Error: Post not found";
+      }
+    </script>
+    <!-- Footer -->
+    <footer class="page-footer font-small blue pt-4">
+      <!-- Footer Links -->
+      <div class="container-fluid text-center text-md-left">
+        <!-- Grid row -->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-6 mt-md-0 mt-3">
+            <!-- Content -->
+            <h5 class="text-uppercase">Reach Us</h5>
+            2/2 Dilkusha Park, New Katra, Prayagraj, Uttar Pradesh, India,
+            211002
+          </div>
+          <!-- Grid column -->
+
+          <hr class="clearfix w-100 d-md-none pb-3" />
+
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+            <!-- Links -->
+            <h5 class="text-uppercase">Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="terms_and_conditions.html">Terms and Conditions</a>
+              </li>
+              <li>
+                <a href="privacy_policy.html">Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+            <!-- Links -->
+            <h5 class="text-uppercase">Follow us</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <span>
+                  <a href="http://www.facebook.com/redseedgames"
+                    ><img
+                      src="https://ayushraj1024.files.wordpress.com/2019/01/if_facebook_circle_color_107175.png"
+                  /></a>
+                  <a href="http://www.instagram.com/redseedgames"
+                    ><img
+                      src="https://ayushraj1024.files.wordpress.com/2018/11/1cb40-if_25_social_2609558.png"
+                  /></a>
+                  <a href="http://www.twitter.com/redseedgames"
+                    ><img
+                      src="https://ayushraj1024.files.wordpress.com/2019/01/if_twitter_circle_color_107170.png"
+                  /></a>
+                  <a href="https://www.linkedin.com/company/redseedgames"
+                    ><img
+                      src="https://ayushraj1024.files.wordpress.com/2019/01/if_linkedin_circle_color_107178.png"
+                  /></a>
+                  <a
+                    href="https://www.youtube.com/channel/UC-__kq1bWNFzPr2r5DlJ8ZA"
+                    ><img
+                      src="https://ayushraj1024.files.wordpress.com/2018/11/59648-if_youtube_317714.png"
+                  /></a>
+                  <a href="https://www.tumblr.com/blog/redseedgames"
+                    ><img
+                      src="https://ayushraj1024.files.wordpress.com/2019/03/if_tumblr_2308134.png"
+                  /></a>
+                </span>
+              </li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+      <!-- Footer Links -->
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">
+        Copyright ©
+        <span id="current-year"></span>
+        Redseed Game Studio. All rights reserved.
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <script>
+      const currentYear = new Date().getFullYear();
+      document.getElementById("current-year").textContent = currentYear;
+    </script>
+  </body>
+</html>
