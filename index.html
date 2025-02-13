@@ -147,7 +147,8 @@
 
       posts.forEach(post => {
         const title = post.title.$t;
-        const link = post.link.find(l => l.rel === 'alternate').href;
+        const postId = post.id.$t.split("post-")[1]; // Extract post ID
+        const link = `blog.html?postId=${postId}`;
         const contentSnippet = post.summary ? post.summary.$t : post.content.$t;
         const content = post.content ? post.content.$t : '';
         const excerpt = contentSnippet.split(' ').slice(0, 30).join(' ') + '...'; // Limit to 30 words for excerpt
