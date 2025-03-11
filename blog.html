@@ -227,7 +227,7 @@
 
       // Fetch the specific blog post by ID using JSONP
       function fetchBlogPost(postId) {
-        const feedUrl = `https://blog.redseed.cc/feeds/posts/default/${postId}?alt=json-in-script&callback=handlePostData`;
+        const feedUrl = `https://redseedgames.blogspot.com/feeds/posts/default/${postId}?alt=json-in-script&callback=handlePostData`;
 
         const script = document.createElement("script");
         script.src = feedUrl;

@@ -252,7 +252,7 @@
 
       // Fetch the total number of posts and display the paginated list
       function fetchTotalPosts() {
-        const feedUrl = `https://blog.redseed.cc/feeds/posts/default?alt=json-in-script&callback=handleTotalPosts`;
+        const feedUrl = `https://redseedgames.blogspot.com/feeds/posts/default?alt=json-in-script&callback=handleTotalPosts`;
 
         const script = document.createElement("script");
         script.src = feedUrl;
@@ -269,7 +269,7 @@
       // Fetch and display the posts for the current page
       function displayPage(page) {
         const startIndex = (page - 1) * postsPerPage;
-        const feedUrl = `https://blog.redseed.cc/feeds/posts/default?start-index=${
+        const feedUrl = `https://redseedgames.blogspot.com/feeds/posts/default?start-index=${
           startIndex + 1
         }&max-results=${postsPerPage}&alt=json-in-script&callback=handlePagePosts`;
 
