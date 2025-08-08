@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WMM5MJQ7');</script>
+  <!-- End Google Tag Manager -->
+  
+  <title>A Sweet Meeting: Rebirth | Free Kinetic Novel</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="We are working on Niara: Rebellion Of the King Visual Novel RPG at the moment. Follow us to see how the development is going.">
+  <meta name="keywords" content="Game, video games, mobile games, pc games, RPG, role playing games, visual novel rpg, visual novel games, visual novel">
+  <link rel="shortcut icon" type="image/png" href="images/redseed_logo.png"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script>
+  $(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+<!--Script for newsletter subscription-->
+<script>
+$(document).ready(function(){
+  $("#subscribeButton").click(function(){
+    
+	//Fetching email address from the input field
+	var email = document.getElementById("usr").value;
+	
+	//Validating the fetched email address
+	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	if(email.match(mailformat))
+	{
+		
+		//Sending request to server
+		$.post("subscribe.php",
+		{
+		email: email
+		},
+		function(data,status){
+			var messageData = JSON.parse(data);
+			document.getElementById("usr").value = "";
+			document.getElementById("usr").placeholder = messageData["message"];
+		});	
+	}
+	else
+	{
+		document.getElementById("usr").value = "";
+		document.getElementById("usr").placeholder = "Please Enter Valid Email Address";
+	}
+	
+  });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+  $("#closeButton").click(function(){
+    $("#subscribeForm").remove();
+  });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+  $("#overlayCloseButton").click(function(){
+    $("#overlay").remove();
+  });
+});
+</script>
+
+</head>
+    <body style = "background-image:url('images/a_sweet_meeting_overlay.png'); background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
+      
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMM5MJQ7"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->  
+      
+      <div class="container">
+            <center>
+                <br><br>
+                <img src="images/redseed_logo.png" width=100 height=auto>
+                <br><br>
+                <h1 style="font-family:binary;color:red;">A SWEET MEETING: REBIRTH</h1>
+                <h4  style="text-shadow: 0 0 5px #FFFFFF;font-family:binary;">DOWNLOAD FOR FREE FROM GOOGLE PLAY</h4>
+                <br>
+                <a
+              href="https://play.google.com/store/apps/details?id=cc.redseed.sweetrebirth"
+              ><img
+                src="images/google-play-badge.png"
+                style="
+                  margin-right: 10px;
+                  margin-top: 10px;
+                  width: 150px;
+                  height: auto;
+                "
+            /></a>
+                <br><br>
+            </center>
+        </div>
+    </body>
+</html>
