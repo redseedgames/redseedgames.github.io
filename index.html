@@ -16,17 +16,109 @@
     </script>
     <!-- End Google Tag Manager -->
 
-    <title>Redseed Game Studio</title>
+    <title>Redseed Game Studio | Visual Novel &amp; RPG Games for Android &amp; PC</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="We are working on Niara: Rebellion Of the King Visual Novel RPG at the moment. Follow us to see how the development is going."
+      content="Redseed Game Studio makes visual novels and visual novel RPGs for Android and PC. Download free titles Dusk Point R: Miko's Journey and A Sweet Meeting: Rebirth in English and Hindi, or play Kori's Fable and Niara on Google Play and Steam."
     />
     <meta
       name="keywords"
-      content="Game, video games, mobile games, pc games, RPG, role playing games, visual novel rpg, visual novel games, visual novel"
+      content="Redseed Game Studio, visual novel, hindi visual novel, android visual novel, steam visual novel, visual novel RPG, free visual novel, cyberpunk visual novel, fantasy visual novel, mobile story games, RenPy games"
     />
+    <link rel="canonical" href="https://redseed.cc/" />
+    <link rel="alternate" hreflang="en" href="https://redseed.cc/" />
+    <link rel="alternate" hreflang="hi" href="https://redseed.cc/hi/" />
+    <link rel="alternate" hreflang="x-default" href="https://redseed.cc/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Redseed Game Studio" />
+    <meta property="og:title" content="Redseed Game Studio | Visual Novel &amp; RPG Games" />
+    <meta
+      property="og:description"
+      content="Free and premium visual novels for Android and PC — including Hindi editions of Dusk Point R and A Sweet Meeting: Rebirth."
+    />
+    <meta property="og:url" content="https://redseed.cc/" />
+    <meta property="og:image" content="https://redseed.cc/images/redseed_logo_edited_720p.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Redseed Game Studio | Visual Novel &amp; RPG Games" />
+    <meta
+      name="twitter:description"
+      content="Download free visual novels and story RPGs from Redseed Game Studio on Google Play and Steam."
+    />
+    <meta name="twitter:image" content="https://redseed.cc/images/redseed_logo_edited_720p.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://redseed.cc/#organization",
+            "name": "Redseed Game Studio",
+            "url": "https://redseed.cc/",
+            "logo": "https://redseed.cc/images/redseed_logo_edited_720p.png",
+            "email": "support@redseed.cc",
+            "sameAs": [
+              "https://www.facebook.com/redseedgames",
+              "https://www.instagram.com/redseedgames",
+              "https://twitter.com/redseedgames",
+              "https://www.youtube.com/channel/UC-__kq1bWNFzPr2r5DlJ8ZA",
+              "https://www.linkedin.com/company/redseedgames"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://redseed.cc/#website",
+            "url": "https://redseed.cc/",
+            "name": "Redseed Game Studio",
+            "publisher": { "@id": "https://redseed.cc/#organization" },
+            "inLanguage": ["en", "hi"]
+          },
+          {
+            "@type": "ItemList",
+            "name": "Redseed Game Studio Games",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Kori's Fable Visual Novel",
+                "url": "https://redseed.cc/korisfable.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Niara: Rebellion Of the King",
+                "url": "https://redseed.cc/niara_rotk/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "A Sweet Meeting: Rebirth",
+                "url": "https://redseed.cc/a_sweet_meeting_rebirth.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Dusk Point R: Miko's Journey",
+                "url": "https://redseed.cc/dusk_point_reloaded_mikos_journey.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "डस्क पॉइंट R: मीको का सफर",
+                "url": "https://redseed.cc/hi/miko.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 6,
+                "name": "एक प्यारी मुलाक़ात",
+                "url": "https://redseed.cc/hi/sweet-meeting.html"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
     <link rel="shortcut icon" type="image/png" href="images/redseed_logo.png" />
     <link
       rel="stylesheet"
@@ -113,6 +205,14 @@
       });
     </script>
     <script src="gtag.js"></script>
+    <script src="js/game-links.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.RedseedGameLinks) {
+          RedseedGameLinks.renderGamesPromo("home-games-promo");
+        }
+      });
+    </script>
   </head>
   <body
     style="
@@ -184,6 +284,10 @@
         // Append to the blog posts grid
         postList.appendChild(col);
       });
+
+      if (window.RedseedGameLinks) {
+        RedseedGameLinks.linkGameNamesInElement(postList);
+      }
     }
 
     function extractFirstParagraph(content) {
@@ -488,12 +592,26 @@
             >Learn More</a
           >
           <!--<a href = "http://niara.redseed.cc" class = "btn btn-danger" role = "button" style = "color:white;margin:10px;">Visit Website</a>-->
+          <h4 style="text-shadow: 0 0 5px #ffffff; font-family: binary">
+            AVAILABLE ON:
+          </h4>
+          <div class="d-inline">
           <a
             href="https://play.google.com/store/apps/details?id=cc.redseed.sweetrebirth"
             ><img
               src="images/google-play-badge.png"
               style="width: 150px; height: auto; margin: 10px"
+              alt="A Sweet Meeting: Rebirth on Google Play (English)"
           /></a>
+          <a
+            href="https://play.google.com/store/apps/details?id=cc.redseed.sweetrebirthhindi"
+            ><img
+              src="images/google-play-badge.png"
+              style="width: 150px; height: auto; margin: 10px"
+              alt="Ek Pyari Mulaqat on Google Play (Hindi)"
+          /></a>
+          <a href="hi/sweet-meeting.html" class="btn btn-outline-light btn-sm" style="margin:10px;color:white;border-color:white;">हिंदी पेज</a>
+          </div>
           <br /><br />
         </div>
         <div class="col-sm-6">
@@ -550,6 +668,14 @@
                 src="images/itch_badge.png"
                 style="width: 150px; height: auto; margin: 10px"
             /></a>
+            <a
+              href="https://play.google.com/store/apps/details?id=cc.redseed.duskpointreloadedmikohindi"
+              ><img
+                src="images/google-play-badge.png"
+                style="width: 150px; height: auto; margin: 10px"
+                alt="Download Dusk Point R in Hindi on Google Play"
+            /></a>
+            <a href="hi/miko.html" class="btn btn-outline-light btn-sm" style="margin:10px;color:white;border-color:white;">हिंदी पेज</a>
           </div>
           <br />
         </div>
@@ -578,6 +704,28 @@
       <h1 style="font-family: binary; color: red">NEWS</h1>
       <br /><br />
       <div id="blog-posts" class="row blog-posts" style="background-color: rgba(0, 0, 0, 0.5); padding: 10px"></div>
+
+      <div
+        class="row mt-4"
+        style="background-color: rgba(0, 0, 0, 0.5); padding: 20px"
+      >
+        <div class="col-12">
+          <h2 style="font-family: binary; color: red; text-align: center">
+            PLAY OUR GAMES
+          </h2>
+          <p
+            style="
+              text-shadow: 0 0 5px #ffffff;
+              font-family: binary;
+              text-align: center;
+              color: white;
+            "
+          >
+            Free Hindi visual novels and premium story RPGs from Redseed Game Studio.
+          </p>
+          <div id="home-games-promo"></div>
+        </div>
+      </div>
       
       <center>
         <a

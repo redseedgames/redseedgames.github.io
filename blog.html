@@ -18,17 +18,23 @@
     </script>
     <!-- End Google Tag Manager -->
 
-    <title>Redseed Game Studio</title>
+    <title>Redseed Game Studio Blog</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="We are working on Niara: Rebellion Of the King Visual Novel RPG at the moment. Follow us to see how the development is going."
+      content="Read the latest blog posts from Redseed Game Studio about visual novel development, releases, and updates."
     />
     <meta
       name="keywords"
-      content="Game, video games, mobile games, pc games, RPG, role playing games, visual novel rpg, visual novel games, visual novel"
+      content="Redseed blog, visual novel news, Redseed Game Studio"
     />
+    <link rel="canonical" href="https://redseed.cc/blog.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Redseed Game Studio" />
+    <meta property="og:title" content="Redseed Game Studio Blog" />
+    <meta property="og:url" content="https://redseed.cc/blog.html" />
+    <meta property="og:image" content="https://redseed.cc/images/redseed_logo_edited_720p.png" />
     <link rel="shortcut icon" type="image/png" href="images/redseed_logo.png" />
     <link
       rel="stylesheet"
@@ -216,9 +222,21 @@
           class="post-content"
           style="color: lightslategrey"
         ></div>
+        <div
+          class="mt-4 p-3"
+          style="border-top: 1px solid #555"
+        >
+          <h2
+            style="font-family: binary; color: red; font-size: 1.5rem"
+          >
+            PLAY OUR GAMES
+          </h2>
+          <div id="blog-post-games-promo"></div>
+        </div>
       </div>
     </div>
 
+    <script src="js/game-links.js"></script>
     <script>
       // Helper function to get the query parameter from the URL
       function getQueryParam(param) {
@@ -245,7 +263,14 @@
         // Display post title, date, and content
         document.getElementById("post-title").textContent = title;
         document.getElementById("post-date").textContent = publishedDate;
-        document.getElementById("post-content").innerHTML = content; // Render HTML content
+        document.getElementById("post-content").innerHTML = content;
+
+        if (window.RedseedGameLinks) {
+          RedseedGameLinks.linkGameNamesInElement(
+            document.getElementById("post-content")
+          );
+          RedseedGameLinks.renderGamesPromo("blog-post-games-promo");
+        }
       }
 
       // Format the published date

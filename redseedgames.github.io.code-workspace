@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "G:/My Drive/Software Projects/A Sweet Meeting Rebirth"
+		},
+		{
+			"path": "G:/My Drive/Software Projects/Miko_Portrait"
+		},
+		{
+			"path": "G:/My Drive/Software Projects/Koris Fable"
+		},
+		{
+			"path": "G:/My Drive/Software Projects/Niara Rebellion Of the King"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/*.rpyc": true,
+			"**/*.rpa": true,
+			"**/*.rpymc": true,
+			"**/cache/": true
+		}
+	}
+}

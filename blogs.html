@@ -16,17 +16,24 @@
     </script>
     <!-- End Google Tag Manager -->
 
-    <title>Redseed Game Studio</title>
+    <title>Redseed Game Studio Blog | Visual Novel News &amp; Dev Updates</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="We are working on Niara: Rebellion Of the King Visual Novel RPG at the moment. Follow us to see how the development is going."
+      content="News, dev logs, and announcements from Redseed Game Studio — creators of Niara, Kori's Fable, Dusk Point R, and A Sweet Meeting visual novels."
     />
     <meta
       name="keywords"
-      content="Game, video games, mobile games, pc games, RPG, role playing games, visual novel rpg, visual novel games, visual novel"
+      content="Redseed blog, visual novel news, game dev blog, hindi visual novel updates, Redseed Game Studio"
     />
+    <link rel="canonical" href="https://redseed.cc/blogs.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Redseed Game Studio" />
+    <meta property="og:title" content="Redseed Game Studio Blog" />
+    <meta property="og:description" content="Latest news and dev updates from Redseed Game Studio." />
+    <meta property="og:url" content="https://redseed.cc/blogs.html" />
+    <meta property="og:image" content="https://redseed.cc/images/redseed_logo_edited_720p.png" />
     <link rel="shortcut icon" type="image/png" href="images/redseed_logo.png" />
     <link
       rel="stylesheet"
@@ -245,7 +252,26 @@
       </h1>
       <div id="blog-list" class="row"></div>
       <div class="pagination" id="pagination"></div>
+      <div
+        class="mt-4 p-4"
+        style="background-color: rgba(0, 0, 0, 0.5); border-radius: 5px"
+      >
+        <h2
+          class="text-center"
+          style="font-family: binary; color: red; font-size: 24px"
+        >
+          PLAY OUR GAMES
+        </h2>
+        <p
+          class="text-center"
+          style="font-family: binary; color: white; text-shadow: 0 0 5px #ffffff"
+        >
+          Mentioned a game in our blog? Download it below.
+        </p>
+        <div id="blog-games-promo"></div>
+      </div>
     </div>
+    <script src="js/game-links.js"></script>
     <script>
       const postsPerPage = 5; // Number of posts per page
       let currentPage = 1; // Start at page 1
@@ -318,6 +344,10 @@
                           </div>`;
           postList.innerHTML += postHtml;
         });
+
+        if (window.RedseedGameLinks) {
+          RedseedGameLinks.linkGameNamesInElement(postList);
+        }
       }
 
       // Format the published date
@@ -384,6 +414,9 @@
 
       // Initial load
       fetchTotalPosts();
+      if (window.RedseedGameLinks) {
+        RedseedGameLinks.renderGamesPromo("blog-games-promo");
+      }
     </script>
     <!-- Footer -->
     <footer class="page-footer font-small blue pt-4">
