@@ -29,29 +29,6 @@ PAGES: list[tuple[str, str, str, str]] = [
     ("terms_and_conditions.html", "terms_and_conditions.html", "yearly", "0.3"),
 ]
 
-HREFLANG_PAIRS: dict[str, tuple[tuple[str, str], ...]] = {
-    "dusk_point_reloaded_mikos_journey.html": (
-        ("en", f"{SITE}/dusk_point_reloaded_mikos_journey.html"),
-        ("hi", f"{SITE}/hi/miko.html"),
-        ("x-default", f"{SITE}/dusk_point_reloaded_mikos_journey.html"),
-    ),
-    "hi/miko.html": (
-        ("en", f"{SITE}/dusk_point_reloaded_mikos_journey.html"),
-        ("hi", f"{SITE}/hi/miko.html"),
-        ("x-default", f"{SITE}/dusk_point_reloaded_mikos_journey.html"),
-    ),
-    "a_sweet_meeting_rebirth.html": (
-        ("en", f"{SITE}/a_sweet_meeting_rebirth.html"),
-        ("hi", f"{SITE}/hi/sweet-meeting.html"),
-        ("x-default", f"{SITE}/a_sweet_meeting_rebirth.html"),
-    ),
-    "hi/sweet-meeting.html": (
-        ("en", f"{SITE}/a_sweet_meeting_rebirth.html"),
-        ("hi", f"{SITE}/hi/sweet-meeting.html"),
-        ("x-default", f"{SITE}/a_sweet_meeting_rebirth.html"),
-    ),
-}
-
 
 def git_lastmod(relative_path: str) -> str:
     file_path = ROOT / relative_path
@@ -79,8 +56,8 @@ def git_lastmod(relative_path: str) -> str:
 def build_sitemap() -> str:
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
-        '        xmlns:xhtml="http://www.w3.org/1999/xhtml">',
+        '<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
 
     for url_path, source_file, changefreq, priority in PAGES:
@@ -93,15 +70,9 @@ def build_sitemap() -> str:
                 f"    <lastmod>{lastmod}</lastmod>",
                 f"    <changefreq>{changefreq}</changefreq>",
                 f"    <priority>{priority}</priority>",
+                "  </url>",
             ]
         )
-
-        for lang, href in HREFLANG_PAIRS.get(source_file, ()):
-            lines.append(
-                f'    <xhtml:link rel="alternate" hreflang="{lang}" href="{href}" />'
-            )
-
-        lines.append("  </url>")
 
     lines.append("</urlset>")
     return "\n".join(lines) + "\n"
@@ -112,9 +83,14 @@ def main() -> int:
     if missing:
         print("Warning: missing source files:", ", ".join(missing), file=sys.stderr)
 
+    xml = build_sitemap()
     output = ROOT / "sitemap.xml"
-    output.write_text(build_sitemap(), encoding="utf-8")
-    print(f"Wrote {output} ({len(PAGES)} URLs)")
+    output.write_text(xml, encoding="utf-8", newline="\n")
+
+    import xml.etree.ElementTree as ET
+
+    ET.fromstring(xml)
+    print(f"Wrote {output} ({len(PAGES)} URLs, valid XML)")
     return 0
 
 

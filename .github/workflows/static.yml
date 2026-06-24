@@ -27,7 +27,9 @@ jobs:
           fetch-depth: 0
 
       - name: Generate sitemap
-        run: python3 scripts/generate-sitemap.py
+        run: |
+          python3 scripts/generate-sitemap.py
+          python3 -c "import xml.etree.ElementTree as ET; ET.parse('sitemap.xml'); print('sitemap.xml validated')"
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
