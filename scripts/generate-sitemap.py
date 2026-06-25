@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate sitemap.xml with lastmod dates from git history."""
+"""Generate sitemap.xml and sitemap.txt with lastmod dates from git history."""
 
 from __future__ import annotations
 
@@ -30,6 +30,10 @@ PAGES: list[tuple[str, str, str, str]] = [
 ]
 
 
+def page_url(url_path: str) -> str:
+    return f"{SITE}/{url_path}" if url_path else f"{SITE}/"
+
+
 def git_lastmod(relative_path: str) -> str:
     file_path = ROOT / relative_path
     if not file_path.exists():
@@ -53,21 +57,18 @@ def git_lastmod(relative_path: str) -> str:
     return mtime.strftime("%Y-%m-%d")
 
 
-def build_sitemap() -> str:
+def build_sitemap_xml() -> str:
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
-        '<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
 
     for url_path, source_file, changefreq, priority in PAGES:
-        loc = f"{SITE}/{url_path}" if url_path else f"{SITE}/"
-        lastmod = git_lastmod(source_file)
         lines.extend(
             [
                 "  <url>",
-                f"    <loc>{loc}</loc>",
-                f"    <lastmod>{lastmod}</lastmod>",
+                f"    <loc>{page_url(url_path)}</loc>",
+                f"    <lastmod>{git_lastmod(source_file)}</lastmod>",
                 f"    <changefreq>{changefreq}</changefreq>",
                 f"    <priority>{priority}</priority>",
                 "  </url>",
@@ -78,19 +79,28 @@ def build_sitemap() -> str:
     return "\n".join(lines) + "\n"
 
 
+def build_sitemap_txt() -> str:
+    return "\n".join(page_url(url_path) for url_path, _, _, _ in PAGES) + "\n"
+
+
 def main() -> int:
     missing = [src for _, src, _, _ in PAGES if not (ROOT / src).exists()]
     if missing:
         print("Warning: missing source files:", ", ".join(missing), file=sys.stderr)
 
-    xml = build_sitemap()
-    output = ROOT / "sitemap.xml"
-    output.write_text(xml, encoding="utf-8", newline="\n")
+    xml = build_sitemap_xml()
+    txt = build_sitemap_txt()
+
+    xml_path = ROOT / "sitemap.xml"
+    txt_path = ROOT / "sitemap.txt"
+    xml_path.write_text(xml, encoding="utf-8", newline="\n")
+    txt_path.write_text(txt, encoding="utf-8", newline="\n")
 
     import xml.etree.ElementTree as ET
 
     ET.fromstring(xml)
-    print(f"Wrote {output} ({len(PAGES)} URLs, valid XML)")
+    print(f"Wrote {xml_path} ({len(PAGES)} URLs, valid XML)")
+    print(f"Wrote {txt_path} ({len(PAGES)} URLs)")
     return 0
 
 

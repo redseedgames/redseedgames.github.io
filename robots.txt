@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://redseed.cc/sitemap.xml
+Sitemap: https://redseed.cc/sitemap.txt
