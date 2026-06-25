@@ -32,13 +32,29 @@ jobs:
           python3 -c "import xml.etree.ElementTree as ET; ET.parse('sitemap.xml'); print('sitemap.xml validated')"
           test -s sitemap.txt
 
+      - name: Prepare deploy bundle
+        run: |
+          mkdir -p _site
+          rsync -a \
+            --exclude '_site' \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude 'scripts' \
+            --exclude 'bash.exe.stackdump' \
+            --exclude '*.code-workspace' \
+            ./ _site/
+          test -f _site/CNAME
+          test -f _site/sitemap.xml
+          test -f _site/sitemap.txt
+          test -f _site/robots.txt
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment

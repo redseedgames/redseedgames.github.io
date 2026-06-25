@@ -96,11 +96,16 @@ def main() -> int:
     xml_path.write_text(xml, encoding="utf-8", newline="\n")
     txt_path.write_text(txt, encoding="utf-8", newline="\n")
 
+    # Fresh filename for Search Console if an older sitemap URL is stuck on "Couldn't fetch".
+    index_path = ROOT / "sitemap-index.xml"
+    index_path.write_text(xml, encoding="utf-8", newline="\n")
+
     import xml.etree.ElementTree as ET
 
     ET.fromstring(xml)
     print(f"Wrote {xml_path} ({len(PAGES)} URLs, valid XML)")
     print(f"Wrote {txt_path} ({len(PAGES)} URLs)")
+    print(f"Wrote {index_path}")
     return 0
 
 
