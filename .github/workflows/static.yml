@@ -35,11 +35,10 @@ jobs:
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload static files
-        uses: actions/upload-artifact@v4  # Use the latest version
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
-          path: '.'  # Ensure your HTML files are in this directory
+          path: .
 
       - name: Deploy to GitHub Pages
         id: deployment
