@@ -104,10 +104,12 @@
 
         var str = part.value;
         var lastIndex = 0;
+        var matched = false;
         rule.pattern.lastIndex = 0;
         var match;
 
         while ((match = rule.pattern.exec(str)) !== null) {
+          matched = true;
           if (match.index > lastIndex) {
             updated.push({
               type: "text",
@@ -118,12 +120,10 @@
           lastIndex = match.index + match[0].length;
         }
 
-        if (lastIndex < str.length) {
-          updated.push({ type: "text", value: str.slice(lastIndex) });
-        }
-
-        if (lastIndex === 0) {
+        if (!matched) {
           updated.push(part);
+        } else if (lastIndex < str.length) {
+          updated.push({ type: "text", value: str.slice(lastIndex) });
         }
       });
 
