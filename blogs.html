@@ -272,7 +272,50 @@
       </div>
     </div>
     <script src="js/game-links.js"></script>
+    <script src="js/blog-feed.js"></script>
     <script>
+      if (!window.RedseedBlogFeed) {
+        window.RedseedBlogFeed = (function () {
+          function truncateWords(text, maxWords) {
+            var words = text.split(/\s+/).filter(Boolean);
+            return words.length <= maxWords
+              ? text
+              : words.slice(0, maxWords).join(" ") + "…";
+          }
+          return {
+            extractExcerpt: function (html, options) {
+              options = options || {};
+              var maxWords = options.maxWords || 40;
+              if (!html) return "";
+              if (html.indexOf("<") === -1) {
+                return truncateWords(html.replace(/\s+/g, " ").trim(), maxWords);
+              }
+              var doc = new DOMParser().parseFromString(html, "text/html");
+              doc.querySelectorAll("img, script, style").forEach(function (el) {
+                el.remove();
+              });
+              var paragraphs = doc.body.querySelectorAll("p");
+              for (var i = 0; i < paragraphs.length; i++) {
+                var text = (paragraphs[i].textContent || "")
+                  .replace(/\s+/g, " ")
+                  .trim();
+                if (text.length >= 20) return truncateWords(text, maxWords);
+              }
+              var fallback = (doc.body.textContent || "")
+                .replace(/\s+/g, " ")
+                .trim();
+              return fallback ? truncateWords(fallback, maxWords) : "";
+            },
+            extractLargeImage: function (html) {
+              var imgTag = new DOMParser()
+                .parseFromString(html, "text/html")
+                .querySelector("img");
+              return imgTag ? imgTag.src.replace(/s72-c/, "s600") : null;
+            },
+          };
+        })();
+      }
+
       const postsPerPage = 5; // Number of posts per page
       let currentPage = 1; // Start at page 1
       let totalPosts = 0; // Total number of posts
@@ -316,18 +359,14 @@
           const postId = post.id.$t.split("post-")[1]; // Extract post ID
         //   const link = post.link.find((l) => l.rel === "alternate").href;
           const link = `blog.html?postId=${postId}`;
-          const contentSnippet = post.summary
-            ? post.summary.$t
-            : post.content.$t;
+          const summary = post.summary ? post.summary.$t : "";
           const content = post.content ? post.content.$t : "";
-          const excerpt =
-            contentSnippet.split(" ").slice(0, 30).join(" ") + "..."; // Limit to 30 words
-          const firstParagraph = extractFirstParagraph(contentSnippet);
+          const excerptSource = summary || content;
           const publishedDate = formatPublishedDate(post.published.$t);
 
           let imgSrc = "";
           imgSrc =
-            extractLargeImage(content) ||
+            RedseedBlogFeed.extractLargeImage(content) ||
             "https://via.placeholder.com/300x200?text=No+Image";
 
           // Add the post to the list
@@ -340,7 +379,7 @@
                                 </center>
                             </a>
                             <p style="color: grey;">${publishedDate}</p>
-                            <p style="color: white;">${extractFirstParagraph(content)}</p>
+                            <p style="color: white;">${RedseedBlogFeed.extractExcerpt(excerptSource)}</p>
                           </div>`;
           postList.innerHTML += postHtml;
         });
@@ -376,40 +415,6 @@
           });
           pagination.appendChild(pageLink);
         }
-      }
-
-      function extractLargeImage(content) {
-        // Extract the first image in the post content
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(content, "text/html");
-        const imgTag = doc.querySelector("img"); // Get the first <img> tag
-        if (imgTag) {
-          let imgSrc = imgTag.src;
-          // If Blogger provides a smaller image size, replace it with a larger one
-          imgSrc = imgSrc.replace(/s72\-c/, "s600"); // Replace small image size with larger size (e.g., s600)
-          return imgSrc;
-        }
-        return null; // No image found
-      }
-
-      function extractFirstParagraph(content) {
-        // Remove <img> tags and any script/style elements
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(content, "text/html");
-
-        // Remove any <img> tags
-        const imgTags = doc.querySelectorAll("img");
-        imgTags.forEach((img) => img.remove());
-
-        // Get the text content
-        let textContent = doc.body.textContent || "No content available";
-
-        // Trim to remove any excessive whitespace
-        textContent = textContent.trim();
-
-        // Return the first 2-3 sentences for the excerpt
-        const sentences = textContent.split(". ");
-        return sentences.slice(0, 2).join(". ") + ".";
       }
 
       // Initial load
